@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(){
+//Write a program to find the sum of the series: 2/3 + 4/7 + 6/11 + 8/15 + ... up to n terms.
+    int n, i;
+    float sum = 0.0;
+    int numerator = 2, denominator = 3;
+    printf("Enter number of terms: ");
+    scanf("%d", &n);\
+    for(i = 1; i <= n; i++) {
+    sum = sum + (float)numerator / denominator;
+    numerator += 2;      
+    denominator += 4;    
+    }
+    printf("Sum of the series = %.2f\n", sum);
+    return 0;
+}
