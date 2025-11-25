@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+    // Print each character of a string on a new line.
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == '\n') continue;  
+        printf("%c\n", str[i]);
+    }
+    return 0;
+}
