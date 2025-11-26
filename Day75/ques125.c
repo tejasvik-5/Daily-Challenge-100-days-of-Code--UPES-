@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(){
+    // Open an existing file in append mode and allow the user to enter a new line of text. Append the text at the end without overwriting existing content.
+    FILE *fp;
+    char filename[50];
+    char text[200];
+    printf("Enter filename: ");
+    scanf("%s", filename);
+    fp = fopen(filename, "a");
+    if (fp == NULL) {
+        printf("Error! Could not open the file.\n");
+        return 1;
+    }
+    getchar();
+    printf("Enter text to append: ");
+    fgets(text, sizeof(text), stdin);
+    fputs(text, fp);
+    fclose(fp);
+    printf("Text successfully appended to %s\n", filename);
+    return 0;
+}
